@@ -1,0 +1,33 @@
+
+Monoid
+Functor & Monad
+
+
+Box<T> = Full(T) | Empty
+
+Box<Apple> b = Full(Apple())
+
+
+
+fun juice(Apple a) : AppleJuice {
+    ...
+}
+
+Box<Apple>              Box<Apple> -> Box<AppleJuice>
+  ^                            ^
+  |                            |
+Full / Emplty                 map
+  |                            |
+Apple                   Apple -> AppleJuice
+
+
+map b juice : Box<AppleJuice>
+
+
+map :: Box<T> -> (T -> R) -> Box<R>
+flatMap :: Box<T> -> ( T -> Box<R>) -> Box<R>
+
+
+map :: Mono<T> -> (T -> R) -> Mono<R>
+flatMap :: Mono<T> -> ( T -> Mono<R>) -> Mono<R>
+

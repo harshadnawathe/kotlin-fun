@@ -1,0 +1,10 @@
+{
+    "customerDetails": {
+        "custType": 100,
+        "name": join( [.input.name.firstName, .input.name.lastName], " ")
+    },
+    "offerCode": if ( .input.offerCode )
+        .input.offerCode
+    else
+        .config.offerCode
+}
