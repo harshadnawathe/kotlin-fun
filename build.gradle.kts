@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.4.0"
+	id("org.springframework.boot") version "2.7.14"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 	kotlin("jvm") version "1.4.10"
 	kotlin("plugin.spring") version "1.4.10"
@@ -22,6 +22,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-aop")
 	implementation("org.springframework.security:spring-security-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("com.fasterxml.jackson.core:jackson-databind:2.15.2")
+	implementation("com.fasterxml.jackson.core:jackson-core:2.15.2")
+	implementation("com.fasterxml.jackson.core:jackson-annotation:2.15.2")
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("io.projectreactor.addons:reactor-extra")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -49,7 +52,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "11"
+		jvmTarget = "17"
 	}
 }
 
